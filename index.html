@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ShipGen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="try2.css">
+  </head>
+  <body>
+    <div id="info" class="noclick">
+      <h1>SHIP: Loading...</h1>
+      registration: <br/>
+      life signs: <br/>
+    </div>
+    <div id="bottom">
+    </div>
+    <div id="scanlines" class="piece noclick scanlines"></div>
+    <div id="glow" class="piece noclick glow"></div>
+    <script src="three.js"></script>
+    <script src="node_modules/three/examples/js/controls/OrbitControls.js"></script>
+    <script src="node_modules/three/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="node_modules/three/examples/js/shaders/CopyShader.js"></script>
+    <script src="node_modules/three/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="node_modules/three/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="node_modules/three/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="node_modules/three/examples/js/shaders/DigitalGlitch.js"></script>
+    <script src="GlitchPass.js"></script>
+    <script src="node_modules/dat.gui/build/dat.gui.min.js"></script>
+    <script src="try2.js" type="module"></script>
+  </body>
+</html>
