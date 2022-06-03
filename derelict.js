@@ -1,5 +1,14 @@
-import makeShip from "./ship.js";
+import * as THREE from "https://cdn.skypack.dev/three@0.133.1/build/three.module";
+import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls";
 
+import { EffectComposer} from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/postprocessing/EffectComposer";
+import { CopyShader } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/shaders/CopyShader";
+import { RenderPass } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/postprocessing/RenderPass";
+import { ShaderPass } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/postprocessing/ShaderPass";
+import { DigitalGlitch } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/shaders/DigitalGlitch";
+import { GlitchPass } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/postprocessing/GlitchPass";
+// why doesn't this work? import { GlitchPass } from "./GlitchPass.js";
+import makeShip from "./ship.js";
 let scene, camera, renderer, composer, raycaster, root;
 let blocks = [];
 let controls;
@@ -100,7 +109,7 @@ function init() {
   window.addEventListener( 'resize', onWindowResize );
   document.addEventListener( 'mouseup', onClick );
 
-  controls = new THREE.OrbitControls( camera, renderer.domElement );
+  controls = new OrbitControls( camera, renderer.domElement );
   controls.autoRotate = true;
   controls.autoRotateSpeed = 0.5;
   controls.minDistance = 1.0;
@@ -154,11 +163,11 @@ function init() {
 
   // post processing
   // from: https://r105.threejsfundamentals.org/threejs/lessons/threejs-post-processing.html
-  composer = new THREE.EffectComposer( renderer );
-  const renderPass = new THREE.RenderPass( scene, camera );
+  composer = new EffectComposer( renderer );
+  const renderPass = new RenderPass( scene, camera );
   composer.addPass( renderPass );
 
-  const glitchPass = new THREE.GlitchPass();
+  const glitchPass = new GlitchPass();
   composer.addPass( glitchPass );
 
   // Ref: https://github.com/mrdoob/three.js/blob/master/examples/webgl_interactive_cubes.html
