@@ -1,4 +1,5 @@
-import * as THREE from "https://cdn.skypack.dev/three@0.133.1/build/three.module";
+// import * as THREE from "https://cdn.skypack.dev/three@0.133.1/build/three.module";
+import * as THREE from "three";
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls";
 
 import { EffectComposer} from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/postprocessing/EffectComposer";
